@@ -1,0 +1,68 @@
+version: "2"
+checks:
+  complex-logic:
+    config:
+      threshold: 10
+  method-complexity:
+    config:
+      threshold: 10
+  nested-control-flow:
+    config:
+      threshold: 4
+  return-statements:
+    config:
+      threshold: 4
+  argument-count:
+    config:
+      threshold: 4
+  file-lines:
+    config:
+      threshold: 500
+  method-count:
+    config:
+      threshold: 20
+  method-lines:
+    config:
+      threshold: 25
+  similar-code:
+    config:
+      threshold: 45
+  identical-code:
+    config:
+      threshold: 45
+
+plugins:
+  duplication:
+    enabled: true
+    config:
+      languages:
+        javascript:
+        typescript:
+  fixme:
+    enabled: true
+    config:
+      strings:
+        - TODO
+        - FIXME
+        - BUG
+        - HACK
+
+exclude_patterns:
+  - "config/"
+  - "db/"
+  - "migrations/"
+  - "**/migrations/"
+  - "dist/"
+  - "features/"
+  - "**/node_modules/"
+  - "script/"
+  - "scripts/"
+  - "spec/"
+  - "**/spec/"
+  - "tests/"
+  - "Tests/"
+  - "**/test/"
+  - "**/tests/"
+  - "**/vendor/"
+  - "**/*_test.go"
+  - "**/*.d.ts"
